@@ -1,0 +1,3 @@
+module RemoveDataAttributes
+  # Your code goes here...
+end
