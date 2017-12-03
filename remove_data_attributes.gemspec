@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = RemoveDataAttributes::VERSION
   s.authors     = ["yasaichi"]
   s.email       = ["yasaichi@users.noreply.github.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RemoveDataAttributes."
-  s.description = "TODO: Description of RemoveDataAttributes."
+  s.homepage    = "https://github.com/yasaichi/remove_data_attributes"
+  s.summary     = "Rails plugin for removing data attributes from views"
+  s.description = "Rails plugin enables you to remove data attributes automatically from views."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
