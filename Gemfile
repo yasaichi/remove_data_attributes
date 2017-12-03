@@ -1,4 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
+
+source "https://rubygems.org"
 
 # Declare your gem's dependencies in remove_data_attributes.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
