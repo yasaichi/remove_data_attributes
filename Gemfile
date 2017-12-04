@@ -13,4 +13,5 @@ gemspec
 # your gem to rubygems.org.
 
 # To use a debugger
-# gem 'byebug', group: [:development, :test]
+gem "pry-coolline"
+gem "pry-rails"
