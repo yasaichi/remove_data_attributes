@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module RemoveDataAttributes
-  # Your code goes here...
-end
+require "remove_data_attributes/configuration"
+require "remove_data_attributes/railtie"
+require "remove_data_attributes/version"
