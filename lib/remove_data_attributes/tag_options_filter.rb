@@ -19,9 +19,14 @@ module RemoveDataAttributes
         processor = ::RemoveDataAttributes::Processor.new(data_attributes)
 
         ::Module.new do
-          define_method(:tag_options) do |options, escape = true|
+          method_name = :tag_options
+          defined_as_private = private_method_defined?(method_name)
+
+          define_method(method_name) do |options, escape = true|
             options.is_a?(::Hash) ? super(processor.call(options), escape) : super
           end
+
+          private method_name if defined_as_private
         end
       end
     end

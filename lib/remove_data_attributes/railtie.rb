@@ -10,11 +10,15 @@ module RemoveDataAttributes
   class Railtie < ::Rails::Railtie
     config.after_initialize do
       ::ActiveSupport.on_load(:action_view) do
-        data_attributes = ::RemoveDataAttributes.configuration.data_attributes
+        patch = ::RemoveDataAttributes::TagOptionsFilter[
+          ::RemoveDataAttributes.configuration.data_attributes
+        ]
 
-        ::ActionView::Helpers::TagHelper::TagBuilder.prepend(
-          ::RemoveDataAttributes::TagOptionsFilter[data_attributes]
-        )
+        if Gem::Version.new(Rails.version) < Gem::Version.new("5.1")
+          ::ActionView::Helpers::TagHelper.prepend(patch)
+        else
+          ::ActionView::Helpers::TagHelper::TagBuilder.prepend(patch)
+        end
       end
     end
   end
