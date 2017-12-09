@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe ActionView::Helpers, type: :helper do
   describe "#tag" do
-    subject { helper.tag.p(data_attribute.to_sym => "value") }
+    subject { helper.tag("p", data_attribute.to_sym => "value") }
 
     # NOTE: The config file exists in spec/dummy/config/initializers.
     context "when `options` includes no keys specified in the configuration" do
