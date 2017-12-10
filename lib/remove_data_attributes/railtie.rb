@@ -15,9 +15,9 @@ module RemoveDataAttributes
         ]
 
         if Gem::Version.new(Rails.version) < Gem::Version.new("5.1")
-          ::ActionView::Helpers::TagHelper.prepend(patch)
+          ::ActionView::Helpers::TagHelper.include(patch)
         else
-          ::ActionView::Helpers::TagHelper::TagBuilder.prepend(patch)
+          ::ActionView::Helpers::TagHelper::TagBuilder.include(patch)
         end
       end
     end
