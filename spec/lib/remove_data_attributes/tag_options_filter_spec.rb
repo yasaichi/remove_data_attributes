@@ -23,7 +23,7 @@ RSpec.describe RemoveDataAttributes::TagOptionsFilter do
 
       context "when superclass#tag_options is defined as public method" do
         before do
-          subject.prepend(return_value)
+          subject.include(return_value)
         end
 
         it { expect(subject.public_method_defined?(:tag_options)).to eq true }
@@ -32,7 +32,7 @@ RSpec.describe RemoveDataAttributes::TagOptionsFilter do
       context "when superclass#tag_options is defined as private method" do
         before do
           subject.class_exec { private :tag_options }
-          subject.prepend(return_value)
+          subject.include(return_value)
         end
 
         it { expect(subject.private_method_defined?(:tag_options)).to eq true }
@@ -44,7 +44,7 @@ RSpec.describe RemoveDataAttributes::TagOptionsFilter do
 
       before do
         allow_any_instance_of(subject.class).to receive(:tag_options)
-        subject.class.prepend(return_value)
+        subject.class.include(return_value)
 
         subject.tag_options(*args)
       end

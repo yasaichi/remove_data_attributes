@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "active_support"
+require "active_support/concern"
 require "remove_data_attributes/processor"
 
 module RemoveDataAttributes
@@ -16,17 +18,24 @@ module RemoveDataAttributes
       end
 
       def module_for(data_attributes)
+        method_name = :tag_options
         processor = ::RemoveDataAttributes::Processor.new(data_attributes)
 
         ::Module.new do
-          method_name = :tag_options
-          defined_as_private = private_method_defined?(method_name)
+          extend ::ActiveSupport::Concern
 
-          define_method(method_name) do |options, escape = true|
-            options.is_a?(::Hash) ? super(processor.call(options), escape) : super
+          included do |klass|
+            patch = Module.new do
+              define_method(method_name) do |options, escape = true|
+                options.is_a?(::Hash) ?
+                  super(processor.call(options), escape) : super(options, escape)
+              end
+
+              private method_name if klass.private_method_defined?(method_name)
+            end
+
+            klass.prepend(patch)
           end
-
-          private method_name if defined_as_private
         end
       end
     end
