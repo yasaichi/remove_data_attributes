@@ -10,6 +10,8 @@ module RemoveDataAttributes
   class Railtie < ::Rails::Railtie
     config.after_initialize do
       ::ActiveSupport.on_load(:action_view) do
+        next if ::RemoveDataAttributes.configuration.data_attributes.empty?
+
         patch = ::RemoveDataAttributes::TagOptionsFilter[
           ::RemoveDataAttributes.configuration.data_attributes
         ]
