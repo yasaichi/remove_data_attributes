@@ -25,7 +25,7 @@ module RemoveDataAttributes
           extend ::ActiveSupport::Concern
 
           included do |klass|
-            patch = Module.new do
+            patch = ::Module.new do
               define_method(method_name) do |options, escape = true|
                 options.is_a?(::Hash) ?
                   super(processor.call(options), escape) : super(options, escape)

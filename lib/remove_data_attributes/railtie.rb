@@ -16,7 +16,7 @@ module RemoveDataAttributes
           ::RemoveDataAttributes.configuration.data_attributes
         ]
 
-        if Gem::Version.new(Rails.version) < Gem::Version.new("5.1")
+        if ::Gem::Version.new(::Rails.version) < ::Gem::Version.new("5.1")
           ::ActionView::Helpers::TagHelper.include(patch)
         else
           ::ActionView::Helpers::TagHelper::TagBuilder.include(patch)
