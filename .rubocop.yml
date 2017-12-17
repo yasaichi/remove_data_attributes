@@ -3,8 +3,10 @@ inherit_from:
 
 AllCops:
   Exclude:
+    - lib/generators/**/templates/**/*
     - remove_data_attributes.gemspec
     - spec/dummy/**/*
+    - tmp/**/*
 
 Metrics/LineLength:
   Max: 100

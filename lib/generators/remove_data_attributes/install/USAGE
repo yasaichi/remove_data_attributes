@@ -1,8 +1,8 @@
 Description:
-    Explain the generator
+    Creates an initializer of remove_data_attributes.
 
 Example:
-    rails generate install Thing
+    `rails generate remove_data_attributes:install`
 
     This will create:
-        what/will/it/create
+        config/initializers/remove_data_attributes.rb
