@@ -1,0 +1,8 @@
+Description:
+    Creates an initializer of remove_data_attributes.
+
+Example:
+    `rails generate remove_data_attributes:install`
+
+    This will create:
+        config/initializers/remove_data_attributes.rb
