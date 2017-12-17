@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "railties", ">= 4.0.0"
 
+  s.add_development_dependency "ammeter"
   s.add_development_dependency "appraisal"
   s.add_development_dependency "reek"
   s.add_development_dependency "rspec-rails"
