@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "Rails plugin enables you to remove data attributes automatically from views."
   s.license     = "MIT"
 
-  s.files = Dir["CHANGELOG.md", "{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["CHANGELOG.md", "lib/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "railties", ">= 4.0.0"
 
