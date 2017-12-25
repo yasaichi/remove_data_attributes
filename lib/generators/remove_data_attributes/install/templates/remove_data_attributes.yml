@@ -1,0 +1,3 @@
+# Configure which data attributes should be removed.
+data_attributes:
+  # - data-test
