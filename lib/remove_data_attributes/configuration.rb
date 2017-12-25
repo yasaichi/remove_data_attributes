@@ -4,18 +4,6 @@ require "remove_data_attributes/errors"
 require "yaml"
 
 module RemoveDataAttributes
-  class << self
-    attr_writer :configuration
-
-    def configuration
-      @configuration ||= ::RemoveDataAttributes::Configuration.new
-    end
-
-    def configure
-      yield(configuration) if block_given?
-    end
-  end
-
   class Configuration
     SUPPORTED_FILE_FORMATS = {
       "YAML" => [".yml", ".yaml"].freeze
