@@ -1,5 +1,5 @@
 inherit_from:
-  - https://raw.githubusercontent.com/rails/rails/master/.rubocop.yml
+  - https://raw.githubusercontent.com/rails/rails/5-1-stable/.rubocop.yml
 
 AllCops:
   Exclude:
