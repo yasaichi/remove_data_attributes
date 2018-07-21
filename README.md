@@ -35,26 +35,26 @@ And then specify `data-*` attributes you'd like to remove in the generated confi
 
 ```yaml
 data_attributes:
-  - data-test
+  - data-testid
 ```
 
-This will remove `data-test` attributes.
+This will remove `data-testid` attributes.
 
 ## Example
-Here is an example of removing `data-test` attributes.
+Here is an example of removing `data-testid` attributes.
 
 ### Template
 ```ERB
 <%= form_for :user, url: session_path(:user) do |f| %>
   <%= field_set_tag "Email" do %>
-    <%= f.email_field :email, "data-test": "email" %>
+    <%= f.email_field :email, "data-testid": "email" %>
   <% end %>
 
   <%= field_set_tag "Password" do %>
-    <%= f.password_field :password, "data-test" => "password" %>
+    <%= f.password_field :password, "data-testid" => "password" %>
   <% end %>
 
-  <%= f.submit "Sign in", data: { test: "submit" } %>
+  <%= f.submit "Sign in", data: { testid: "submit" } %>
 <% end %>
 ```
 
