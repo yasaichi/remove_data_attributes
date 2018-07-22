@@ -16,7 +16,7 @@ RSpec.describe ActionView::Helpers, type: :helper do
 
     context "when `options` includes keys specified in the configuration" do
       let(:options) { { data_attribute.to_sym => "value" } }
-      let(:data_attribute) { "data-test" }
+      let(:data_attribute) { "data-testid" }
 
       it { is_expected.to eq "<p />" }
     end

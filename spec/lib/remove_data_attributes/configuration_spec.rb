@@ -21,7 +21,7 @@ RSpec.describe RemoveDataAttributes::Configuration do
 
     context "when the file format is supported, and the file exists" do
       let(:basename) { "remove_data_attributes.yml" }
-      let(:expectation) { { data_attributes: ["data-test"] } }
+      let(:expectation) { { data_attributes: ["data-testid"] } }
 
       it { is_expected.to be_an_instance_of(described_class) & have_attributes(expectation) }
     end
