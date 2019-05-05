@@ -1,5 +1,6 @@
 language: ruby
 sudo: false
+cache: bundler
 rvm:
   - 2.3.8
   - 2.4.6
@@ -49,3 +50,7 @@ before_script:
   - ./cc-test-reporter before-build
 after_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+notifications:
+  email: false
+  slack:
+    secure: "sDQMXzIOIqQ0MClIX1K29RQniIpjY7L9sW6OzLjhla2mhI51t7fRo9SY71mrlRX0PX4iTP2sASu2DnUZ5BzZ7KxM18M6hT/5IAz6GC5OfU4b1njv9S0oA6uhdXJxm/8PO++Tc2Nse4zNBlKB2rfJrC5UiJhSdEpAeWBCSJEaHEdu5nWhpLIyYYABMAWFbLKsW2YeXsSmwaymQcriSq5kVEi0dAt1z74Gwrnu8feiFx/bqHh0sTRIKCWj3Tto5inYgUAarCHHhnQflwIf6r6ttaO3JUAyCbJ1Mp7gJdjC1TfkGIQXyo7QZ9rOqR2+IE0EsnpVmqQpG7GuhdLfSx8nXQiRI0U9hPIMO7oMWKa/Dc5aUXHOdoGkp0s7n6JIY7Dn3j3rnkQN5Dsfks/LZCO3Okdrsv0ePa7D/vJMFyOCYHqrI6j2rKLKgbOKvoNsA7Ue13UwPJFXOkFrlPMq/gVmUNLbKkofdaflMsYKWP4b0f9c7M6bczlPavD0JX/QnySf7WvlW4muddKHKVO/bXJn8S/WgCYO4cKm9SVVHp6fxZyVVOOLugH2H8iWnu4m5k80aMN0YlG2AdW6AJlIRPj4GOX7y87qmHl/5qll3GEViggYYU+hU6CkpM9eRnt4OjyCyzUrQkNGDFgAz/fSwepb6uN0eKONF4HXnEYlYlVgTFQ="
