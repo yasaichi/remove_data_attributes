@@ -1,8 +1,10 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.3.5
-  - 2.4.2
+  - 2.3.8
+  - 2.4.6
+  - 2.5.5
+  - 2.6.3
 gemfile:
   - gemfiles/rails_40x.gemfile
   - gemfiles/rails_41x.gemfile
@@ -12,10 +14,28 @@ gemfile:
   - gemfiles/rails_52x.gemfile
 matrix:
   exclude:
-    - rvm: 2.4.2
+    - rvm: 2.4.6
       gemfile: gemfiles/rails_40x.gemfile
-    - rvm: 2.4.2
+    - rvm: 2.5.5
+      gemfile: gemfiles/rails_40x.gemfile
+    - rvm: 2.6.3
+      gemfile: gemfiles/rails_40x.gemfile
+    - rvm: 2.4.6
       gemfile: gemfiles/rails_41x.gemfile
+    - rvm: 2.5.5
+      gemfile: gemfiles/rails_41x.gemfile
+    - rvm: 2.6.3
+      gemfile: gemfiles/rails_41x.gemfile
+    - rvm: 2.5.5
+      gemfile: gemfiles/rails_42x.gemfile
+    - rvm: 2.6.3
+      gemfile: gemfiles/rails_42x.gemfile
+    - rvm: 2.5.5
+      gemfile: gemfiles/rails_50x.gemfile
+    - rvm: 2.6.3
+      gemfile: gemfiles/rails_50x.gemfile
+    - rvm: 2.6.3
+      gemfile: gemfiles/rails_51x.gemfile
 branches:
   only:
     - master
